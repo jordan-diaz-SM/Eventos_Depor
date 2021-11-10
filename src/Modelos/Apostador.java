@@ -4,6 +4,13 @@ public class Apostador {
     private String dni;
     private String NombresApellidos;
 
+    public Apostador (){}
+
+    public Apostador (String dni, String NombresApellidos){
+        this.dni = dni;
+        this.NombresApellidos = NombresApellidos;
+    }
+
     public String getdni() {
         return dni;
     }

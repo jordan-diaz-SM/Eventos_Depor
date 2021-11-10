@@ -9,6 +9,15 @@ public class EventoDeportivo {
     private Integer MarcadorEquipoLocal;
     private Integer MarcadorEquipoVisitante;
 
+    public EventoDeportivo(){}
+
+    public EventoDeportivo(String CodigoEvento, Equipo EquipoLocal, Equipo EquipoVisita ,String fecha){
+        this.CodigoEvento = CodigoEvento;
+        this.EquipoLocal = EquipoLocal;
+        this.EquipoVisita = EquipoVisita;
+        this.Fecha = fecha;
+    }
+
     public String getCodigoEvento() {
         return CodigoEvento;
     }
@@ -53,8 +62,8 @@ public class EventoDeportivo {
     } 
 
     public void CalcularResultado(){
-        this.MarcadorEquipoLocal = (int)(Math.random()*10+1);
-        this.MarcadorEquipoVisitante = (int)(Math.random()*10+1);
+        this.MarcadorEquipoLocal = (int)(Math.random()*4+1);
+        this.MarcadorEquipoVisitante = (int)(Math.random()*4+1);
 
         if(this.MarcadorEquipoLocal > this.MarcadorEquipoVisitante ){
             this.Resultado = this.EquipoLocal.getNombreEquipo();
@@ -63,5 +72,15 @@ public class EventoDeportivo {
         }else{
             this.Resultado = "Empate";
         }
+    }
+
+    public void mostrarResultado(){
+        System.out.println( "Fecha: "+ this.Fecha);
+        System.out.println( "EquipoLocal: "+ this.EquipoLocal.getNombreEquipo());
+        System.out.println( "EquipoVisitante: "+ this.EquipoVisita.getNombreEquipo());
+        System.out.println( "Resultado: "+ this.Resultado);
+        System.out.println( "MarcadorLocal: "+ this.MarcadorEquipoLocal);
+        System.out.println( "MarcadorVisitante: "+ this.MarcadorEquipoVisitante);
+
     }
 }
