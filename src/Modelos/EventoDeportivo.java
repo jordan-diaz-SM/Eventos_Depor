@@ -1,10 +1,12 @@
 package Modelos;
 
+import Modelos.Equipo;
+
 public class EventoDeportivo {
     private String CodigoEvento;
     private String Fecha;
-    private String EquipoLocal;
-    private String EquipoVisita;
+    private Equipo EquipoLocal;
+    private Equipo EquipoVisita;
     private String Resultado;
     private Integer MarcadorEquipoLocal;
     private Integer MarcadorEquipoVisitante;
@@ -30,16 +32,16 @@ public class EventoDeportivo {
     public void setResultado(String resultado) {
         this.Resultado = resultado;
     }
-    public String getEquipoVisita() {
+    public Equipo getEquipoVisita() {
         return EquipoVisita;
     }
-    public void setEquipoVisita(String equipoVisita) {
+    public void setEquipoVisita(Equipo equipoVisita) {
         this.EquipoVisita = equipoVisita;
     }
-    public String getEquipoLocal() {
+    public Equipo getEquipoLocal() {
         return EquipoLocal;
     }
-    public void setEquipoLocal(String equipoLocal) {
+    public void setEquipoLocal(Equipo equipoLocal) {
         this.EquipoLocal = equipoLocal;
     }
     public String getFecha() {
@@ -57,9 +59,9 @@ public class EventoDeportivo {
         this.MarcadorEquipoVisitante = (int)(Math.random()*10+1);
 
         if(this.MarcadorEquipoLocal > this.MarcadorEquipoVisitante ){
-            this.Resultado = this.EquipoLocal;
+            this.Resultado = this.EquipoLocal.getNombreEquipo();
         }else if(this.MarcadorEquipoLocal < this.MarcadorEquipoVisitante ){
-            this.Resultado = this.EquipoVisita;
+            this.Resultado = this.EquipoLocal.getNombreEquipo();
         }else{
             this.Resultado = "Empate";
         }
