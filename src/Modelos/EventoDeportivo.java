@@ -1,7 +1,5 @@
 package Modelos;
 
-import Modelos.Equipo;
-
 public class EventoDeportivo {
     private String CodigoEvento;
     private String Fecha;
