@@ -4,6 +4,13 @@ public class Equipo {
     private String codigoEquipo;
     private String nombreEquipo;
 
+    public Equipo() {}
+
+    public Equipo(String codigoEquipo , String nombreEquipo) {
+        this.codigoEquipo = codigoEquipo;
+        this.nombreEquipo = nombreEquipo;
+    }
+
     public String getCodigoEquipo() {
         return codigoEquipo;
     }
