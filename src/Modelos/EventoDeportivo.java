@@ -62,15 +62,18 @@ public class EventoDeportivo {
     } 
 
     public void CalcularResultado(){
-        this.MarcadorEquipoLocal = (int)(Math.random()*4+1);
-        this.MarcadorEquipoVisitante = (int)(Math.random()*4+1);
+        //this.MarcadorEquipoLocal = (int)(Math.random()*4+1);
+        //this.MarcadorEquipoVisitante = (int)(Math.random()*4+1);
+
+        this.MarcadorEquipoLocal = 4;
+        this.MarcadorEquipoVisitante = 2;
 
         if(this.MarcadorEquipoLocal > this.MarcadorEquipoVisitante ){
-            this.Resultado = this.EquipoLocal.getNombreEquipo();
+            this.Resultado = "LOCAL";
         }else if(this.MarcadorEquipoLocal < this.MarcadorEquipoVisitante ){
-            this.Resultado = this.EquipoLocal.getNombreEquipo();
+            this.Resultado = "VISITANTE";
         }else{
-            this.Resultado = "Empate";
+            this.Resultado = "EMPATE";
         }
     }
 

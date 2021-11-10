@@ -2,6 +2,7 @@
 import Modelos.Equipo;
 import Modelos.EventoDeportivo;
 import Modelos.Apostador;
+import Modelos.Apuesta;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -22,15 +23,24 @@ public class App {
         EventoDeportivo evento1 = new EventoDeportivo("eve1",Equipo1,Equipo2,"10/11/2021");
         EventoDeportivo evento2 = new EventoDeportivo("eve1",Equipo3,Equipo4,"10/11/2021");
 
+        //Crear Apuesta
+
+        Apuesta apuesta1 = new Apuesta("A1",apostador1,evento1,"IncluyeMarcador",(float) 50.0,"LOCAL",4,2);
+        
         //Calcular Resultado
         evento1.CalcularResultado();
-        evento2.CalcularResultado();
+        //evento2.CalcularResultado();
         //
         System.out.println("---------------PARTIDO--------------------------");
         evento1.mostrarResultado();
         System.out.println("---------------PARTIDO--------------------------");
-        evento2.mostrarResultado();
         //evento2.mostrarResultado();
+        
+        ///apuesta 
+        System.out.println("---------------APUESTA--------------------------");
+        apuesta1.Validar(evento1);
+
+        // 
         
     }
 }
